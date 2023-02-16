@@ -2,11 +2,12 @@
     "assignment_name": "RegOpt",
     "contributors": [
         {
-            "name": "Change this to your name",
-            "pennkey": "MyPennKey"
+            "name": "Shengao Yi",
+            "pennkey": "Ericyi"
         }
     ],
     "sources": [
-        "Don't forget to list your sources/attribution here!"
+            "https://github.com/bckenstler/CLR/blob/master/clr_callback.py",
+            "looked into the original code of CyclicLR, learned how to build clr from scratch"
     ]
 }
