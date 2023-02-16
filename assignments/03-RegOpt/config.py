@@ -6,25 +6,26 @@ from torchvision.transforms import Compose, Normalize, ToTensor
 
 
 class CONFIG:
-
-    batch_size = 64
-    num_epochs = 2
-    initial_learning_rate = 0.001
+    batch_size = 100
+    num_epochs = 20
+    initial_learning_rate = 0.0001
     initial_weight_decay = 0
 
     lrs_kwargs = {
         # You can pass arguments to the learning rate scheduler
         # constructor here.
+        "step_size": 1000,
+        "gamma": 0.9998,
+        "mode": "triangular2",
+        "max_lr": 0.01,
     }
 
     optimizer_factory: Callable[
         [nn.Module], torch.optim.Optimizer
     ] = lambda model: torch.optim.Adam(
-        model.parameters(), lr=CONFIG.initial_learning_rate, weight_decay=CONFIG.initial_weight_decay,
+        model.parameters(),
+        lr=CONFIG.initial_learning_rate,
+        weight_decay=CONFIG.initial_weight_decay,
     )
 
-    transforms = Compose(
-        [
-            ToTensor(),
-        ]
-    )
+    transforms = Compose([ToTensor(), Normalize(mean=0.5, std=0.5)])
