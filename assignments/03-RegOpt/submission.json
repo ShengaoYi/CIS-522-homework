@@ -7,7 +7,7 @@
         }
     ],
     "sources": [
-            "https://github.com/bckenstler/CLR/blob/master/clr_callback.py", 
+            "https://github.com/bckenstler/CLR/blob/master/clr_callback.py",
             "looked into the original code of CyclicLR, learned how to build clr from scratch"
     ]
 }

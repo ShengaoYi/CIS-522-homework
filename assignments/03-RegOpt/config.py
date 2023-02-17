@@ -7,7 +7,7 @@ from torchvision.transforms import Compose, Normalize, ToTensor
 
 class CONFIG:
     batch_size = 100
-    num_epochs = 20
+    num_epochs = 8
     initial_learning_rate = 0.0001
     initial_weight_decay = 0
 
@@ -29,3 +29,7 @@ class CONFIG:
     )
 
     transforms = Compose([ToTensor(), Normalize(mean=0.5, std=0.5)])
+# transforms.RandomHorizontalFlip(p=0.5),
+#         transforms.RandomAffine(degrees=10, translate=(0.1, 0.1), scale=(0.9, 1.1)),
+#         transforms.ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1),
+#         transforms.RandomRotation(10)
