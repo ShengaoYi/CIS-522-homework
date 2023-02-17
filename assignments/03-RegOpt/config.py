@@ -29,6 +29,8 @@ class CONFIG:
     )
 
     transforms = Compose([ToTensor(), Normalize(mean=0.5, std=0.5)])
+
+
 # transforms.RandomHorizontalFlip(p=0.5),
 #         transforms.RandomAffine(degrees=10, translate=(0.1, 0.1), scale=(0.9, 1.1)),
 #         transforms.ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1),
