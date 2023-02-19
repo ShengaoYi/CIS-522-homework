@@ -7,7 +7,7 @@ from torchvision.transforms import Compose, Normalize, ToTensor
 
 class CONFIG:
     batch_size = 100
-    num_epochs = 6
+    num_epochs = 10
     initial_learning_rate = 0.0001
     initial_weight_decay = 0
 
@@ -16,7 +16,7 @@ class CONFIG:
         # constructor here.
         "step_size": 1000,
         "gamma": 0.9998,
-        "mode": "triangular2",
+        "mode": "triangular",
         "max_lr": 0.01,
     }
 
