@@ -16,7 +16,7 @@ class CONFIG:
         # constructor here.
         "step_size": 1000,
         "gamma": 0.9998,
-        "mode": "triangular",
+        "mode": "triangular2",
         "max_lr": 0.01,
     }
 
