@@ -17,6 +17,8 @@ class Model(torch.nn.Module):
             num_classes: Number of output classes
         """
 
+        super(Model, self).__init__()
+
         self.conv1 = nn.Conv2d(
             in_channels=num_channels, out_channels=32, kernel_size=3, padding=1
         )
