@@ -21,10 +21,7 @@ class Model(torch.nn.Module):
         super(Model, self).__init__()
 
         self.conv1 = nn.Conv2d(
-            in_channels=num_channels,
-            out_channels=10,
-            kernel_size=3,
-            padding=1,
+            in_channels=num_channels, out_channels=10, kernel_size=3, padding=1
         )
 
         # self.bn1 = torch.nn.BatchNorm2d(10)
