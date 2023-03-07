@@ -21,15 +21,14 @@ class Model(torch.nn.Module):
         super(Model, self).__init__()
 
         self.conv1 = nn.Conv2d(
-            in_channels=num_channels, out_channels=32, kernel_size=3, padding=1
+            in_channels=num_channels, out_channels=10, kernel_size=3, padding=1
         )
-        self.conv2 = nn.Conv2d(
-            in_channels=32, out_channels=64, kernel_size=3, padding=1
-        )
+
+        self.bn1 = torch.nn.BatchNorm2d(10)
 
         self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
 
-        self.fc1 = nn.Linear(4096, num_classes)
+        self.fc1 = nn.Linear(2560, num_classes)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
@@ -44,13 +43,10 @@ class Model(torch.nn.Module):
         """
 
         x = self.conv1(x)
+        x = self.bn1(x)
         x = F.relu(x)
         x = self.pool(x)
 
-        x = self.conv2(x)
-        x = F.relu(x)
-
-        x = self.pool(x)
         x = torch.flatten(x, start_dim=1)
 
         x = self.fc1(x)
