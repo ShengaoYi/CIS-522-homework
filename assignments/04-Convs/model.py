@@ -29,7 +29,7 @@ class Model(torch.nn.Module):
 
         self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
 
-        self.fc1 = nn.Linear(16384, num_classes)
+        self.fc1 = nn.Linear(4096, num_classes)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
@@ -45,6 +45,7 @@ class Model(torch.nn.Module):
 
         x = self.conv1(x)
         x = F.relu(x)
+        x = self.pool(x)
 
         x = self.conv2(x)
         x = F.relu(x)
