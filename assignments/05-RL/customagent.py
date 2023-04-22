@@ -78,14 +78,11 @@ class Agent:
         current_state = torch.tensor(
             state, dtype=torch.float32, device=self.device
         ).unsqueeze(0)
-
         if np.random.rand() < self.epsilon:
             action = self.action_space.sample()
         else:
-
             with torch.no_grad():
                 action = self.model(current_state).argmax().item()
-
         self.prev_state = state
         self.prev_action = action
         return action
