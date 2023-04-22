@@ -38,6 +38,7 @@ class DQN(nn.Module):
         """
         return self.fc(x)
 
+
 class Agent:
     """
     My Agent Architecture
