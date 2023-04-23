@@ -8,6 +8,6 @@
     ],
     "sources": [
         "heuristic solution code",
-        "https://github.com/openai/gym/blob/master/gym/envs/box2d/lunar_lander.py",
+        "https://github.com/openai/gym/blob/master/gym/envs/box2d/lunar_lander.py"
     ]
 }
