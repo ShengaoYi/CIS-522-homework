@@ -38,7 +38,7 @@ class Agent:
             state[0] * 0.5 + state[2] * 1.0
         )  # angle should point towards center
 
-        threshold = 0.41
+        threshold = 0.40
 
         if angle_targ > threshold:
             angle_targ = threshold  # more than threshold is bad
