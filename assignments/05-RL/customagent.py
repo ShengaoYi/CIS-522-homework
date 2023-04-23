@@ -78,5 +78,4 @@ class Agent:
         Takes an observation, a reward, a boolean indicating whether the episode has terminated,
         and a boolean indicating whether the episode was truncated.
         """
-
         pass
